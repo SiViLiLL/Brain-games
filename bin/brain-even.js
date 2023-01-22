@@ -14,7 +14,7 @@ const checkParity = () => {
     } else if (!isEven(currentNumber) && userAnswer.toLowerCase() === 'no') {
       console.log('Correct!');
     } else {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was 'no'.\nLet's try again, ${userName}!`);
+      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, '${userName}'!`);
       return 'wasted';
     }
   }
