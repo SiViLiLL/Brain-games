@@ -1,5 +1,6 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/SiViLiLL/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/SiViLiLL/frontend-project-44/actions)
+[![Maintainability](https://api.codeclimate.com/v1/badges/b5293361d5f7b6a352d6/maintainability)](https://codeclimate.com/github/SiViLiLL/frontend-project-44/maintainability)
 
 #  Описание #
 
