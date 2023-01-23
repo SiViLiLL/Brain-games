@@ -10,7 +10,7 @@ export default (gamesRound, gameInstructions) => {
     if (roundResult === 'round passed') {
       console.log('Correct!');
     } else {
-      console.log(`'${roundResult.userAnswer}' is wrong answer ;(. Correct answer was '${roundResult.answer}'.\nLet's try again, '${userName}'!`);
+      console.log(`'${roundResult.userAnswer}' is wrong answer ;(. Correct answer was '${roundResult.answer}'.\nLet's try again, ${userName}!`);
       wasCompletedSuccessfully = false;
       break;
     }
