@@ -5,7 +5,7 @@ const isEven = (number) => number % 2 === 0;
 export default () => {
   const maxNumber = 1000;
   const currentNumber = Math.floor(Math.random() * maxNumber);
-  const answer = isEven();
+  const answer = isEven(currentNumber);
   const userAnswer = readlineSync.question(`Question: ${currentNumber}\nYour answer:`);
   if (userAnswer.toLowerCase() === 'yes' && answer) {
     return 'round passed';
