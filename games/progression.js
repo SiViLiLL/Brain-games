@@ -14,7 +14,7 @@ const generateProgressionStr = () => {
     progressionStr += `${start} `;
     start += step;
   }
-  return progressionStr;
+  return progressionStr.trim();
 };
 
 const getHideMember = (progressionStr) => {
