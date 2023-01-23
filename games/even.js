@@ -11,5 +11,5 @@ export default () => {
   if (!isEven(currentNumber) && userAnswer.toLowerCase() === 'no') {
     return 'round passed';
   }
-  return 'wasted';
+  return userAnswer;
 };
