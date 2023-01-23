@@ -4,15 +4,18 @@ export default (gamesRound, gameInstructions) => {
   const userName = askUserName();
   console.log(gameInstructions);
   const numberOfRounds = 3;
+  let wasCompletedSuccessfully = true;
   for (let i = 0; i < numberOfRounds; i += 1) {
-    const userAnswer = '';
     const roundResult = gamesRound(userName);
-    if (roundResult === 'wasted') {
-      console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, '${userName}'!`);
-      break;
-    } else if (roundResult === 'round passed') {
+    if (roundResult === 'round passed') {
       console.log('Correct!');
+    } else {
+      console.log(`'${roundResult}' is wrong answer ;(. Correct answer was 'no'.\nLet's try again, '${userName}'!`);
+      wasCompletedSuccessfully = false;
+      break;
     }
   }
-  console.log(`Congratulations, ${userName}!`);
+  if (wasCompletedSuccessfully) {
+    console.log(`Congratulations, ${userName}!`);
+  }
 };
