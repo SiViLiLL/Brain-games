@@ -23,7 +23,7 @@ export default () => {
   const firstArg = Math.floor(Math.random() * maxNumber);
   const secondArg = Math.floor(Math.random() * maxNumber);
   const operation = getOperation();
-  const expression = firstArg + operation + secondArg;
+  const expression = `${firstArg} ${operation} ${secondArg}`;
   const answer = calculateExpression(firstArg, secondArg, operation);
   const userAnswer = readlineSync.question(`Question: ${expression}\nYour answer:`);
   if (+userAnswer === answer) {
