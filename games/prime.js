@@ -25,5 +25,8 @@ export default () => {
   if (userAnswer.toLowerCase() === 'no' && !answer) {
     return 'round passed';
   }
-  return userAnswer;
+  const roundsData = {};
+  roundsData.userAnswer = userAnswer;
+  roundsData.answer = answer ? 'yes' : 'no';
+  return roundsData;
 };

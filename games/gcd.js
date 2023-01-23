@@ -23,5 +23,8 @@ export default () => {
   if (+userAnswer === answer) {
     return 'round passed';
   }
-  return userAnswer;
+  const roundsData = {};
+  roundsData.userAnswer = userAnswer;
+  roundsData.answer = answer;
+  return roundsData;
 };

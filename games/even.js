@@ -4,12 +4,16 @@ const isEven = (number) => number % 2 === 0;
 
 export default () => {
   const currentNumber = Math.floor(Math.random() * 1000);
+  const answer = isEven();
   const userAnswer = readlineSync.question(`Question: ${currentNumber}\nYour answer:`);
-  if (isEven(currentNumber) && userAnswer.toLowerCase() === 'yes') {
+  if (userAnswer.toLowerCase() === 'yes' && answer) {
     return 'round passed';
   }
-  if (!isEven(currentNumber) && userAnswer.toLowerCase() === 'no') {
+  if (userAnswer.toLowerCase() === 'no' && !answer) {
     return 'round passed';
   }
-  return userAnswer;
+  const roundsData = {};
+  roundsData.userAnswer = userAnswer;
+  roundsData.answer = answer ? 'yes' : 'no';
+  return roundsData;
 };
