@@ -19,8 +19,9 @@ const calculateExpression = (firstArg, secondArg, operation) => {
 };
 
 export default () => {
-  const firstArg = Math.floor(Math.random() * 1000);
-  const secondArg = Math.floor(Math.random() * 1000);
+  const maxNumber = 1000;
+  const firstArg = Math.floor(Math.random() * maxNumber);
+  const secondArg = Math.floor(Math.random() * maxNumber);
   const operation = getOperation();
   const expression = firstArg + operation + secondArg;
   const answer = calculateExpression(firstArg, secondArg, operation);

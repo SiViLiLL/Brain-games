@@ -16,8 +16,9 @@ const calculateGcd = (firstNumber, secondNumber) => {
 };
 
 export default () => {
-  const firstNumber = Math.floor(Math.random() * 1000);
-  const secondNumber = Math.floor(Math.random() * 1000);
+  const maxNumber = 1000;
+  const firstNumber = Math.floor(Math.random() * maxNumber);
+  const secondNumber = Math.floor(Math.random() * maxNumber);
   const answer = calculateGcd(firstNumber, secondNumber);
   const userAnswer = readlineSync.question(`Question: ${firstNumber} ${secondNumber}\nYour answer:`);
   if (+userAnswer === answer) {

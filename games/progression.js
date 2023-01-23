@@ -5,8 +5,9 @@ const generateProgressionStr = () => {
   const minStep = 1;
   const maxMembers = 12;
   const minMembers = 5;
+  const maxNumber = 1000;
   const step = Math.floor(Math.random() * (maxStep - minStep + 1) + minStep);
-  let start = Math.floor(Math.random() * 1000);
+  let start = Math.floor(Math.random() * maxNumber);
   const numberOfMembers = Math.floor(Math.random() * (maxMembers - minMembers + 1) + minMembers);
   let progressionStr = '';
   for (let i = 0; i <= numberOfMembers; i += 1) {
