@@ -1,4 +1,5 @@
-import readlineSync from 'readline-sync';
+import numberGenerate from '../utilits.js';
+import startGame from '../index.js';
 
 const getOperation = () => {
   const operations = ['*', '-', '+'];
@@ -18,19 +19,17 @@ const calculateExpression = (firstArg, secondArg, operation) => {
   }
 };
 
-export default () => {
+const generateDataOfRound = () => {
+  const minNumber = 0;
   const maxNumber = 1000;
-  const firstArg = Math.floor(Math.random() * maxNumber);
-  const secondArg = Math.floor(Math.random() * maxNumber);
+  const firstArg = numberGenerate(minNumber, maxNumber);
+  const secondArg = numberGenerate(minNumber, maxNumber);
   const operation = getOperation();
   const expression = `${firstArg} ${operation} ${secondArg}`;
-  const answer = calculateExpression(firstArg, secondArg, operation);
-  const userAnswer = readlineSync.question(`Question: ${expression}\nYour answer:`);
-  if (+userAnswer === answer) {
-    return 'round passed';
-  }
-  const roundsData = {};
-  roundsData.userAnswer = userAnswer;
-  roundsData.answer = answer;
-  return roundsData;
+  const answerOfRound = `${calculateExpression(firstArg, secondArg, operation)}`;
+  return { questionData: expression, answer: answerOfRound };
+};
+
+export default () => {
+  startGame(generateDataOfRound, 'What is the result of the expression?');
 };

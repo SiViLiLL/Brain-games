@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-import startGame from '../src/index.js';
-import gamesRound from '../games/calc.js';
+import runCalcGame from '../src/games/calc.js';
 
-startGame(gamesRound, 'What is the result of the expression?');
+runCalcGame();
