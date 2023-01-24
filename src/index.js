@@ -1,21 +1,18 @@
+import readlineSync from 'readline-sync';
 import askUserName from './cli.js';
 
-export default (gamesRound, gameInstructions) => {
+export default (generateDataOfRound, gameInstructions) => {
   const userName = askUserName();
   console.log(gameInstructions);
   const numberOfRounds = 3;
-  let wasCompletedSuccessfully = true;
   for (let i = 0; i < numberOfRounds; i += 1) {
-    const roundResult = gamesRound(userName);
-    if (roundResult === 'round passed') {
+    const dataOfRound = generateDataOfRound();
+    const userAnswer = readlineSync.question(`Question: ${dataOfRound.questionData}\nYour answer:`);
+    if (userAnswer === dataOfRound.answer) {
       console.log('Correct!');
     } else {
-      console.log(`'${roundResult.userAnswer}' is wrong answer ;(. Correct answer was '${roundResult.answer}'.\nLet's try again, ${userName}!`);
-      wasCompletedSuccessfully = false;
-      break;
+      return console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${dataOfRound.answer}'.\nLet's try again, ${userName}!`);
     }
   }
-  if (wasCompletedSuccessfully) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+  return console.log(`Congratulations, ${userName}!`);
 };
