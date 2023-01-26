@@ -16,7 +16,7 @@ const generateDataOfRound = () => {
   const start = generateRandomNumber(0, 1000);
   const step = generateRandomNumber(1, 100);
   const progression = generateProgression(start, step);
-  const indexOfHideMember = generateRandomNumber(0, progression.length);
+  const indexOfHideMember = generateRandomNumber(0, progression.length - 1);
   const hideMember = progression[indexOfHideMember];
   const hideMemberIndex = progression.indexOf(hideMember);
   const answer = `${hideMember}`;
