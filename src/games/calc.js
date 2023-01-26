@@ -20,10 +20,8 @@ const calculateExpression = (firstArg, secondArg, operation) => {
 };
 
 const generateDataOfRound = () => {
-  const minNumber = 0;
-  const maxNumber = 1000;
-  const firstArg = numberGenerate(minNumber, maxNumber);
-  const secondArg = numberGenerate(minNumber, maxNumber);
+  const firstArg = numberGenerate(0, 1000);
+  const secondArg = numberGenerate(0, 1000);
   const operation = getOperation();
   const expression = `${firstArg} ${operation} ${secondArg}`;
   const answerOfRound = `${calculateExpression(firstArg, secondArg, operation)}`;

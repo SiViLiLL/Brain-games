@@ -4,9 +4,7 @@ import startGame from '../index.js';
 const isEven = (number) => number % 2 === 0;
 
 const generateDataOfRound = () => {
-  const minNumber = 0;
-  const maxNumber = 1000;
-  const currentNumber = numberGenerate(minNumber, maxNumber);
+  const currentNumber = numberGenerate(0, 1000);
   const answerOfRound = isEven(currentNumber) ? 'yes' : 'no';
   return { questionData: currentNumber, answer: answerOfRound };
 };

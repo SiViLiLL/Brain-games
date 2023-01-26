@@ -2,15 +2,9 @@ import startGame from '../index.js';
 import numberGenerate from '../utilits.js';
 
 const generateProgressionStr = () => {
-  const maxStep = 100;
-  const minStep = 1;
-  const maxMembers = 12;
-  const minMembers = 5;
-  const minNumber = 0;
-  const maxNumber = 1000;
-  const step = numberGenerate(minStep, maxStep);
-  let start = numberGenerate(minNumber, maxNumber);
-  const numberOfMembers = Math.floor(Math.random() * (maxMembers - minMembers + 1) + minMembers);
+  const step = numberGenerate(1, 100);
+  let start = numberGenerate(0, 1000);
+  const numberOfMembers = numberGenerate(5, 12);
   let progressionStr = '';
   for (let i = 0; i <= numberOfMembers; i += 1) {
     progressionStr += `${start} `;

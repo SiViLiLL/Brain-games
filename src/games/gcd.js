@@ -17,10 +17,8 @@ const calculateGcd = (firstNumber, secondNumber) => {
 };
 
 const generateDataOfRound = () => {
-  const minNumber = 0;
-  const maxNumber = 1000;
-  const firstNumber = numberGenerate(minNumber, maxNumber);
-  const secondNumber = numberGenerate(minNumber, maxNumber);
+  const firstNumber = numberGenerate(0, 1000);
+  const secondNumber = numberGenerate(0, 1000);
   const coupleOfNumbers = `${firstNumber} ${secondNumber}`;
   const answerOfRound = `${calculateGcd(firstNumber, secondNumber)}`;
   return { questionData: coupleOfNumbers, answer: answerOfRound };
