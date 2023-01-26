@@ -1,12 +1,12 @@
 import readlineSync from 'readline-sync';
 import askUserName from './cli.js';
 
-export default (generateDataOfRound, gameInstructions) => {
+export default (roundData, gameInstructions) => {
   const userName = askUserName();
   console.log(gameInstructions);
   const numberOfRounds = 3;
   for (let i = 0; i < numberOfRounds; i += 1) {
-    const [questionData, answer] = generateDataOfRound();
+    const [questionData, answer] = roundData();
     const userAnswer = readlineSync.question(`Question: ${questionData}\nYour answer:`);
     if (userAnswer === answer) {
       console.log('Correct!');
