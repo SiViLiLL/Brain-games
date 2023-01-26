@@ -1,4 +1,4 @@
-import numberGenerate from '../utilits.js';
+import generateRandomNumber from '../utilits.js';
 import startGame from '../index.js';
 
 const getOperation = () => {
@@ -20,8 +20,8 @@ const calculateExpression = (firstArg, secondArg, operation) => {
 };
 
 const generateDataOfRound = () => {
-  const firstArg = numberGenerate(0, 1000);
-  const secondArg = numberGenerate(0, 1000);
+  const firstArg = generateRandomNumber(0, 1000);
+  const secondArg = generateRandomNumber(0, 1000);
   const operation = getOperation();
   const expression = `${firstArg} ${operation} ${secondArg}`;
   const answerOfRound = `${calculateExpression(firstArg, secondArg, operation)}`;

@@ -1,5 +1,5 @@
 import startGame from '../index.js';
-import numberGenerate from '../utilits.js';
+import generateRandomNumber from '../utilits.js';
 
 const isPrime = (number) => {
   for (let i = 2; i <= Math.sqrt(number); i += 1) {
@@ -11,7 +11,7 @@ const isPrime = (number) => {
 };
 
 const generateDataOfRound = () => {
-  const number = numberGenerate(2, 3571);
+  const number = generateRandomNumber(2, 3571);
   const answerOfRound = isPrime(number) ? 'yes' : 'no';
   return { questionData: number, answer: answerOfRound };
 };

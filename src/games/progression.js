@@ -1,10 +1,10 @@
 import startGame from '../index.js';
-import numberGenerate from '../utilits.js';
+import generateRandomNumber from '../utilits.js';
 
 const generateProgressionStr = () => {
-  const step = numberGenerate(1, 100);
-  let start = numberGenerate(0, 1000);
-  const numberOfMembers = numberGenerate(5, 12);
+  const step = generateRandomNumber(1, 100);
+  let start = generateRandomNumber(0, 1000);
+  const numberOfMembers = generateRandomNumber(5, 12);
   let progressionStr = '';
   for (let i = 0; i <= numberOfMembers; i += 1) {
     progressionStr += `${start} `;

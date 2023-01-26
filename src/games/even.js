@@ -1,10 +1,10 @@
-import numberGenerate from '../utilits.js';
+import generateRandomNumber from '../utilits.js';
 import startGame from '../index.js';
 
 const isEven = (number) => number % 2 === 0;
 
 const generateDataOfRound = () => {
-  const currentNumber = numberGenerate(0, 1000);
+  const currentNumber = generateRandomNumber(0, 1000);
   const answerOfRound = isEven(currentNumber) ? 'yes' : 'no';
   return { questionData: currentNumber, answer: answerOfRound };
 };

@@ -1,4 +1,4 @@
-import numberGenerate from '../utilits.js';
+import generateRandomNumber from '../utilits.js';
 import startGame from '../index.js';
 
 const calculateGcd = (firstNumber, secondNumber) => {
@@ -17,8 +17,8 @@ const calculateGcd = (firstNumber, secondNumber) => {
 };
 
 const generateDataOfRound = () => {
-  const firstNumber = numberGenerate(0, 1000);
-  const secondNumber = numberGenerate(0, 1000);
+  const firstNumber = generateRandomNumber(0, 1000);
+  const secondNumber = generateRandomNumber(0, 1000);
   const coupleOfNumbers = `${firstNumber} ${secondNumber}`;
   const answerOfRound = `${calculateGcd(firstNumber, secondNumber)}`;
   return { questionData: coupleOfNumbers, answer: answerOfRound };
