@@ -3,12 +3,12 @@ import startGame from '../index.js';
 
 const calculateGcd = (firstNumber, secondNumber) => {
   let divider = firstNumber <= secondNumber ? firstNumber : secondNumber;
-  let divisible = divider === firstNumber ? secondNumber : firstNumber;
-  while (divider <= divisible) {
-    if (divisible % divider !== 0) {
+  let dividend = divider === firstNumber ? secondNumber : firstNumber;
+  while (divider <= dividend) {
+    if (dividend % divider !== 0) {
       const helper = divider;
-      divider = divisible % divider;
-      divisible = helper;
+      divider = dividend % divider;
+      dividend = helper;
     } else {
       return divider;
     }
