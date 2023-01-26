@@ -24,8 +24,8 @@ const generateDataOfRound = () => {
   const secondArg = generateRandomNumber(0, 1000);
   const operation = getOperation();
   const expression = `${firstArg} ${operation} ${secondArg}`;
-  const answerOfRound = `${calculateExpression(firstArg, secondArg, operation)}`;
-  return { questionData: expression, answer: answerOfRound };
+  const answer = `${calculateExpression(firstArg, secondArg, operation)}`;
+  return [expression, answer];
 };
 
 export default () => {

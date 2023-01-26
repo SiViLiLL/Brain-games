@@ -20,8 +20,8 @@ const generateDataOfRound = () => {
   const firstNumber = generateRandomNumber(0, 1000);
   const secondNumber = generateRandomNumber(0, 1000);
   const coupleOfNumbers = `${firstNumber} ${secondNumber}`;
-  const answerOfRound = `${calculateGcd(firstNumber, secondNumber)}`;
-  return { questionData: coupleOfNumbers, answer: answerOfRound };
+  const answer = `${calculateGcd(firstNumber, secondNumber)}`;
+  return [coupleOfNumbers, answer];
 };
 
 export default () => {

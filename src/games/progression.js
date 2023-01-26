@@ -29,9 +29,9 @@ const getProgressinWithHideMember = (progressionStr, hideMember) => {
 
 const generateDataOfRound = () => {
   const progression = generateProgressionStr();
-  const answerOfRound = `${getHideMember(progression)}`;
-  const progressionForQuestion = getProgressinWithHideMember(progression, answerOfRound);
-  return { questionData: progressionForQuestion, answer: answerOfRound };
+  const answer = `${getHideMember(progression)}`;
+  const progressionForQuestion = getProgressinWithHideMember(progression, answer);
+  return [progressionForQuestion, answer];
 };
 
 export default () => {

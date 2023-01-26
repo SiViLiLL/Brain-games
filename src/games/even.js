@@ -5,8 +5,8 @@ const isEven = (number) => number % 2 === 0;
 
 const generateDataOfRound = () => {
   const currentNumber = generateRandomNumber(0, 1000);
-  const answerOfRound = isEven(currentNumber) ? 'yes' : 'no';
-  return { questionData: currentNumber, answer: answerOfRound };
+  const answer = isEven(currentNumber) ? 'yes' : 'no';
+  return [currentNumber, answer];
 };
 
 export default () => {
