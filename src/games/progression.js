@@ -21,8 +21,8 @@ const generateDataOfRound = () => {
   const hideMemberIndex = progression.indexOf(hideMember);
   const answer = `${hideMember}`;
   progression[hideMemberIndex] = '..';
-  const progressionForQuestion = progression.join(' ');
-  return [progressionForQuestion, answer];
+  const result = progression.join(' ');
+  return [result, answer];
 };
 
 export default () => {
