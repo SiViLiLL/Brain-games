@@ -1,36 +1,27 @@
 import startGame from '../index.js';
 import generateRandomNumber from '../utilits.js';
 
-const generateProgressionStr = () => {
-  const step = generateRandomNumber(1, 100);
-  let start = generateRandomNumber(0, 1000);
+const generateProgression = (start, step) => {
+  let currentValue = start;
   const numberOfMembers = generateRandomNumber(5, 12);
-  let progressionStr = '';
+  const progression = [];
   for (let i = 0; i <= numberOfMembers; i += 1) {
-    progressionStr += `${start} `;
-    start += step;
+    progression.push(currentValue);
+    currentValue += step;
   }
-  return progressionStr.trim();
-};
-
-const getHideMember = (progressionStr) => {
-  const progressionArr = progressionStr.split(' ');
-  const indexOfHideMember = Math.floor(Math.random() * progressionArr.length);
-  const hideMember = progressionArr[indexOfHideMember];
-  return hideMember;
-};
-
-const getProgressinWithHideMember = (progressionStr, hideMember) => {
-  const progressionArr = progressionStr.split(' ');
-  const hideMemberIndex = progressionArr.indexOf(hideMember);
-  progressionArr[hideMemberIndex] = '..';
-  return progressionArr.join(' ');
+  return progression;
 };
 
 const generateDataOfRound = () => {
-  const progression = generateProgressionStr();
-  const answer = `${getHideMember(progression)}`;
-  const progressionForQuestion = getProgressinWithHideMember(progression, answer);
+  const start = generateRandomNumber(0, 1000);
+  const step = generateRandomNumber(1, 100);
+  const progression = generateProgression(start, step);
+  const indexOfHideMember = generateRandomNumber(0, progression.length);
+  const hideMember = progression[indexOfHideMember];
+  const hideMemberIndex = progression.indexOf(hideMember);
+  const answer = `${hideMember}`;
+  progression[hideMemberIndex] = '..';
+  const progressionForQuestion = progression.join(' ');
   return [progressionForQuestion, answer];
 };
 
