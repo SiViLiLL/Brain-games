@@ -2,18 +2,18 @@ import generateRandomNumber from '../utilits.js';
 import startGame from '../index.js';
 
 const calculateGcd = (firstNumber, secondNumber) => {
-  let divider = firstNumber <= secondNumber ? firstNumber : secondNumber;
-  let dividend = divider === firstNumber ? secondNumber : firstNumber;
-  while (divider <= dividend) {
-    if (dividend % divider !== 0) {
-      const helper = divider;
-      divider = dividend % divider;
-      dividend = helper;
+  let smallNum = firstNumber <= secondNumber ? firstNumber : secondNumber;
+  let largNum = smallNum === firstNumber ? secondNumber : firstNumber;
+  while (largNum !== smallNum) {
+    const difference = largNum - smallNum;
+    if (difference < smallNum) {
+      largNum = smallNum;
+      smallNum = difference;
     } else {
-      return divider;
+      largNum = difference;
     }
   }
-  return divider;
+  return largNum;
 };
 
 const generateDataOfRound = () => {
