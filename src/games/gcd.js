@@ -1,9 +1,13 @@
 import generateRandomNumber from '../utilits.js';
 import startGame from '../index.js';
 
+const getTheSmallestNum = (num1, num2) => (num1 < num2 ? num1 : num2);
+
+const getTheLargestNum = (num1, num2) => (num1 > num2 ? num1 : num2);
+
 const calculateGcd = (firstNumber, secondNumber) => {
-  let smallNum = firstNumber <= secondNumber ? firstNumber : secondNumber;
-  let largNum = smallNum === firstNumber ? secondNumber : firstNumber;
+  let smallNum = getTheSmallestNum(firstNumber, secondNumber);
+  let largNum = getTheLargestNum(firstNumber, secondNumber);
   while (largNum !== smallNum) {
     const difference = largNum - smallNum;
     if (difference < smallNum) {
